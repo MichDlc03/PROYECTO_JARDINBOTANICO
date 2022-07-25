@@ -1,0 +1,146 @@
+body
+{
+    background-color: #eeeeee;
+    font-family: 'Catamaran', sans-serif;
+
+}
+h2{
+    text-align: center;
+    font-size: 100%;
+    text-shadow: #000000;
+    margin-left: 20px;
+}
+.encabezado
+{
+    border-radius: 10px;
+    margin: 120px;
+    display: flex;
+    background-color: #F1E1A6;
+    color: lightgoldenrodyellow;
+    font-family: 'Catamaran', sans-serif;
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+.seccion
+{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+
+}
+.main{
+    margin-left: 270px;
+    background-color: #F4BBBB;
+    width: 1000px;
+}
+
+
+div.col-8{
+    font-family: 'Catamaran', sans-serif;
+    font-size: 20px;
+    margin-left:150px;
+}
+
+.boton-img
+{
+    flex-flow: row wrap;
+    flex-direction: row;
+}
+.E{
+    font-family: 'IBM Plex Serif', serif;
+    margin-top: 100px;
+}
+.boton-img p
+{
+    color: whitesmoke;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 40px;
+    text-align: center; 
+    margin: 5px;
+    padding: 5px;
+    overflow: hidden;
+}
+img
+{
+    margin: 10px;
+    padding: 5px;
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+    transition: all 55ms linear;
+}
+img:hover
+{
+    width: 250px;
+    height: 250px;
+}
+
+.div-form
+{
+    margin: 5px;
+    padding: 5px;
+    flex-flow: wrap row;
+}
+.div-form label
+{
+    color: green;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 20px;
+
+}
+.conte{
+    background-image:url(../jardin/pexels-joey-kyber-119591.jpg) ;
+    
+}
+.div-form input
+{
+    margin: 5px;
+    padding: 5px;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 20px;
+
+}
+.contenedor_principal{
+    position: fixed;
+    background-color:#8bc34a;
+    height: 80px;
+    width: 1530px;
+    top: 0;
+    left: 0;
+    
+}
+
+.contenedor{
+
+    width: 1420px;
+    font-family: 'Catamaran', sans-serif;
+    height: 250px;
+}
+
+
+#guardar-cambios{
+    margin-left: 83%;
+}
+.agregar-planta{
+    font-family: 'Catamaran', sans-serif;
+    margin-left: 90px;
+    margin-top: 5%;
+    padding-left: 80%;
+}
+
+.portada{
+    margin-bottom: 0%;
+    margin-top: 7%;
+    height: 200px;
+    background-image: url(../jardin/fondo-admi.jpeg) ;
+}
+#guardar{
+    margin-left: 51%;
+}
+
+.card-fijo{
+    font-family: 'Catamaran', sans-serif;
+    
+    width: 30%;
+}

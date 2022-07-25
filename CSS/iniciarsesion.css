@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.menu{
+    
+  font-family: 'Catamaran', sans-serif;
+  font-size: 18px;
+  
+}
+.menu1{
+  color: white;
+  text-decoration:wavy;
+  font-family: 'Catamaran', sans-serif;
+  font-size: 25px;
+  
+}
+body {
+  font-family: 'Catamaran', sans-serif;
+
+  background: #aabb97;
+}
+.form-register {
+  position: relative;
+  width: 400px;
+  background: white;
+  padding: 30px;
+  margin: auto;
+  margin-top: 215px;
+  border-radius: 4px;
+  font-family: 'Catamaran', sans-serif;
+  color: rgb(0, 0, 0);
+  box-shadow: 7px 13px 37px #47602a;
+}
+
+.form-register h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.controls {
+  width: 100%;
+  background: #e0e0e0;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #47602a;
+  font-size: 16px;
+  color: #47602a;
+}
+
+.form-register p {
+  height: 50px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.form-register a {
+  color:white;
+  text-decoration: none;
+}
+
+.form-register a:hover {
+  color:#aabb97;
+  
+}
+
+
+
+.form-register .botons {
+  width: 100%;
+  background: #aed581;
+  border: none;
+  padding: 12px;
+  color: rgb(250, 250, 250);
+  margin: 16px 0;
+  font-size: 16px;
+}
+
+.botones{
+  align-items: center;
+  width: 350px;
+  height: 100px;
+  display: flex;
+}
+
+.boton1{
+  border-radius: 4px;
+  text-align: center;
+  width: 170px;
+  height: 50px;
+  background-color:#558b2f;
+  margin: 7px;
+  cursor: pointer;
+}
+.text{
+  text-decoration: line-through;
+}
+
+
+.contenedor_principal{
+  position: fixed;
+  background-color:#558b2f;
+  height: 80px;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.nav-link{
+  text-decoration: none;
+  color: white;
+  margin-top: 5px;
+}
+
+.logo{
+  text-shadow: 2px 2px 5px #94af76;
+  font-family: 'Catamaran', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  padding:  0 20px;
+  line-height: 80px;
+
+}
+.nav-menu{
+  display: flex;
+  margin-right: 30px;
+  list-style: none;
+}
+.nav-menu2{
+  font-family: 'Catamaran', sans-serif;
+  font-size: 18px;
+  margin:   0 10px;
+  line-height: 80px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.nav-menu2:hover{
+  color: #eee;
+  padding: 10px 20px;
+  border-bottom: 3px solid #ffffff;
+  background-color: #94af76;
+  transition: 0.5S;
+}

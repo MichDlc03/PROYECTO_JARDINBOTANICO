@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imgenes/f.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <title>BOTANIC-Administrador</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/admin.css">
+    <link rel="stylesheet" href="Sass/custom.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js">
+
+</head>
+<body>
+  <nav class="navbar navbar-dark  bg-success fixed-top text-bg-dark color" id="fondo-nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Jardin Botanico</a>
+      <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title " id="offcanvasNavbarLabel" style="color: black;">Menu de Administrador</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body bg-secondary">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html" style="color: black">Home</a>
+            </li>
+            <li class="nav-item">
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="usuario.html"  style="color: rgb(121, 114, 114)" >Usuario</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"  style="color: rgb(121, 114, 114)">Estadisticas</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(121, 114, 114)">
+                Administracion de las plantas
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="#"></a></li>
+                <li><a class="dropdown-item" href="#">Plantas destacadas</a></li>
+                <li><a class="dropdown-item" href="#">Plantas descontinuadas</a></li>
+                <li><a class="dropdown-item" href="#">Plantas mas vendidas</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Plantas devueltas</a></li>
+                <li><a class="dropdown-item" href="#">Plantas pedidas</a></li>
+
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(121, 114, 114)">
+                Configuracion de Usuarios/Administradores
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Alta de Usuarios</a></li>
+                <li><a class="dropdown-item" href="#">Baja de Usuarios</a></li>
+                <li><a class="dropdown-item" href="#">Alta de Administrador</a></li>
+                <li><a class="dropdown-item" href="#">Baja de administrador</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Configuracion de informacion</a></li>
+                <li><a class="dropdown-item" href="#">Actualizar Datos</a></li>
+                <li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
+                <li><a class="dropdown-item" href="#">Cambiar usuario</a></li>
+
+              </ul>
+            </li>
+          </ul>
+          <br>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar planta" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+<br><br><br>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-9 "></div>
+      <div class="col-3 ">
+        <section class="d-flex justify-content-center " style="margin-left: 210px;">
+          <button type="button" class="btn btn-secondary m-1 border-dark" data-bs-toggle="modal" data-bs-target="#agregar-planta" data-bs-whatever="@mdo" id="guardar-cambios">Agregar planta</button>                       
+            <div class="modal fade" id="agregar-planta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel4">Agregar planta</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                  <form>
+                      <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label" >Ingresa el codigo:</label>
+                      <input type="text" class="form-control" id="recipient-name13">
+                      </div>
+                      <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Nombre Común:</label>
+                        <input type="text" class="form-control" id="recipient-name14">
+                      </div>
+                      <div class="d-flex ">
+                      <div class="mb-3 m-3">
+                        <label for="recipient-name" class="col-form-label">Nombre Cientifico:</label>
+                        <input type="text" class="form-control" id="recipient-name15">
+                      </div>
+                      <div class="mb-3 m-3">
+                        <label for="recipient-name" class="col-form-label">Familia:</label>
+                        <input type="text" class="form-control" id="recipient-name16">
+                      </div>
+                      </div>
+                      <div class="d-flex">
+                      <div class="mb-3 m-3">
+                        <label for="recipient-name" class="col-form-label">Cantidad:</label>
+                        <input type="text" class="form-control" id="recipient-name010">
+                      </div>
+                      <div class="mb-3 m-3">
+                        <label for="recipient-name" class="col-form-label">Precio:</label>
+                        <input type="text" class="form-control" id="recipient-name011">
+                      </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Plantacion:</label>
+                        <textarea class="form-control" id="message-text9"></textarea>                                      
+                      </div>
+                      <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Cuidados:</label>
+                        <textarea class="form-control" id="message-text10"></textarea>                                         
+                      </div>  
+                      <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Descripcion:</label>
+                        <textarea class="form-control" id="message-text11"></textarea>
+                      </div>
+                      <button type="file" class="btn btn-primary" data-bs-dismiss="modal">Agregar Imagen</button>
+                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="guardar" onclick="swal('La planta se ha agregado exitosamente', {
+                        icon: 'success',
+                      });">Guardar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+  </div>
+
+  <div class="row text-center ">
+    <div class="col-1 border bg-success text-bg-danger">Codigo</div>
+    <div class="col-3   border bg-success text-bg-danger">Nombre</div>
+    <div class="col-3  border bg-success text-bg-danger">Cantidad</div>
+    <div class="col-2   border bg-success text-bg-danger">Precio</div>
+    <div class="col-3   border bg-success text-bg-danger">Opciones</div>
+</div>
+<div class="row text-center">
+  <div class="col-1 border">1902344</div>
+  <div class="col-3   border">Poto</div>
+  <div class="col-3  border">200 plantas</div>
+  <div class="col-2   border">$35.00</div>
+    <div class="col-3 d-flex justify-content-center border"  >
+      <button type="button" class="btn btn-secondary m-1" onclick="swal({
+        title: '¿Estás seguro?',
+        text: 'Eliminado, se perderán todos los datos del producto',
+        icon: 'warning',
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal('El producto se ha eliminado exitosamente', {
+            icon: 'success',
+          });
+        }
+      });">Eliminar</button>                            
+      <button type="button" class="btn btn-secondary m-1" data-bs-toggle="modal" data-bs-target="#poto" data-bs-whatever="@mdo">Ver</button>                       
+        <div class="modal fade" id="poto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ver Planta</h5>
+                
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Ingresa el codigo:</label>
+                    <input type="text" class="form-control" id="recipient-name" placeholder="1902344" readonly>
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Nombre Común:</label>
+                    <input type="text" class="form-control" id="recipient-name1" placeholder="Poto" readonly>
+                  </div>
+                  <div class="d-flex ">
+                    <div class="mb-3 m-3">
+                      <label for="recipient-name" class="col-form-label">Nombre Cientifico:</label>
+                      <input type="text" class="form-control" id="recipient-name2" placeholder="Epipremnum Pinnatum" readonly>
+                    </div>
+                      <div class="mb-3 m-3">
+                      <label for="recipient-name" class="col-form-label">Familia:</label>
+                      <input type="text" class="form-control" id="recipient-name3" placeholder="Aráceas (Araceae)" readonly>
+                    </div>
+                    
+                  </div>
+                  <div class="d-flex">
+                    <div class="mb-3 m-3">
+                      <label for="recipient-name" class="col-form-label">Existencias:</label>
+                      <input type="text" class="form-control" id="recipient-name6" placeholder="200 plantas" readonly>
+                    </div>
+                    <div class="mb-3 m-3">
+                      <label for="recipient-name" class="col-form-label">Precio:</label>
+                      <input type="text" class="form-control" id="recipient-name7" placeholder="$35.00" readonly>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Plantacion:</label>
+                    <textarea class="form-control" id="message-text" placeholder="Deja que la tierra se seque entre riegos. Para lograr que las hojas alcancen su tamaño definitivo requieren condiciones de humedad ambiental muy altas, lo cual es difícil de lograr en un hogar, pero no imposible si pulverizamos sus hojas con frecuencia y con agua tibia." readonly></textarea>                                      
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Cuidados:</label>
+                    <textarea class="form-control" id="message-text1" placeholder="Dejar secar capa superficial entre riegos, ubucacion interior, a una temperatura de 16-21 ºC (Mín. 3-6 ºC), Los riegos han de ser moderados ya que un exceso de riego provoca el amarillamiento de las hojas y su posterior caída." readonly></textarea>                                         
+                  </div>  
+                  <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Descripcion:</label>
+                    <textarea class="form-control" id="message-text2" placeholder="El potos es una planta trepadora del bosque tropical con hojas verdes teñidas con dibujos de color crema.
+                    Estas hojas, cuando la planta está reptando por el bosque en busca de una guía o soporte para trepar, son 
+                    de tamaño pequeño, pero cuando lo consiguen y comienzan a trepar, las hojas aumentan de tamaño." readonly></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <img class="w-80 mb-4 rounded" id="foto-planta" src="jardin/pot.jpg" alt="">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cambiar Imagen</button>
+                  </div>
+                </form>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-secondary m-1" data-bs-toggle="modal" data-bs-target="#editarpoto" data-bs-whatever="@mdo">Editar</button>
+            </div>
+         </div>
+        </div>
+        
+
+      </div>           
+      <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header ">
+              <h5 class="modal-title" id="exampleModalLabel1 ">Eliminar Planta</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body bg-primary ">
+            </div>
+            <div class="modal-footer ">
+            </div>
+          </div>
+        </div>
+      </div>       
+    </div>
+</div>
+<div class="row text-center">
+  <div class="col-1 border">8234759</div>
+  <div class="col-3   border">Árbol de Jade</div>
+  <div class="col-3  border">150 plantas</div>
+  <div class="col-2   border">$55.00</div>
+  <div class="col-3 d-flex justify-content-center border"  >
+    <button type="button" class="btn btn-secondary m-1" onclick="swal({
+      title: '¿Estás seguro?',
+      text: 'Eliminado, se perderán todos los datos del producto',
+      icon: 'warning',
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal('El producto se ha eliminado exitosamente', {
+          icon: 'success',
+        });
+      }
+    });">Eliminar</button>                           
+      <button type="button" class="btn btn-secondary m-1" data-bs-toggle="modal" data-bs-target="#jade" data-bs-whatever="@mdo">Ver</button>                       
+        <div class="modal fade" id="jade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog ">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel2">Ver Planta</h5>
+                
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Ingresa el codigo:</label>
+                    <input type="text" class="form-control" id="recipient-name4" placeholder="8234759" readonly>
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Nombre Común:</label>
+                    <input type="text" class="form-control" id="recipient-name5" placeholder="Árbol de Jade" readonly>
+                  </div>
+                  <div class="d-flex ">
+                    <div class="mb-3 m-3">
+                      <label for="recipient-name" class="col-form-label">Nombre Cientifico:</label>
+                      <input type="text" class="form-control" id="recipient-name06" placeholder="Crassula ovata" readonly>
+                    </div>
+                      <div class="mb-3 m-3">
+                      <label for="recipient-name" class="col-form-label">Familia:</label>
+                      <input type="text" class="form-control" id="recipient-name07" placeholder="Crassulaceae" readonly>
+                    </div>
+                  </div>
+                  <div class="d-flex">
+                    <div class="mb-3 m-3">
+                      <label for="recipient-name" class="col-form-label">Existencias:</label>
+                      <input type="text" class="form-control" id="recipient-name006" placeholder="150 plantas" readonly>
+                    </div>
+                    <div class="mb-3 m-3">
+                      <label for="recipient-name" class="col-form-label">Precio:</label>
+                      <input type="text" class="form-control" id="recipient-name007" placeholder="$55.00" readonly>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Plantacion:</label>
+                    <textarea class="form-control" id="message-text3" placeholder="Para el árbol de jade es mejor que se planta en una mezcla que contenga tierra de jardín, perlita y arena. La tierra que uses debe drenar bien el agua de riego, ya que esta especie no tolera los encharcamientos. El riego en exceso puede ocasionar la caída de las hojas y la putrefacción de la planta." readonly></textarea>                                      
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Cuidados:</label>
+                    <textarea class="form-control" id="message-text4" placeholder="Para estimularla se debe dejar de regar por completo en otoño. La combinación de días más cortos, noches frías y falta de agua durante varias semanas producirán la floración alrededor del comienzo del invierno." readonly></textarea>                                         
+                  </div>  
+                  <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Descripcion:</label>
+                    <textarea class="form-control" id="message-text5" placeholder="El arbol de jade es una planta con ramas gruesas y hojas carnosas de 3 a 7 cm, que crecen en pares opuestos a lo largo del tallo. Tiene un crecimiento arbustivo, suele desarrollar un tronco central grueso.Las hojas son de un característico color verde jade y algunas variedades pueden desarrollar." readonly></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <img class="w-80 mb-4 rounded" id="foto-planta1" src="jardin/ficuss1.png" alt="">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cambiar Imagen</button>
+                  </div>
+                </form>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-secondary m-1" data-bs-toggle="modal" data-bs-target="#editarjade" data-bs-whatever="@mdo">Editar</button>
+            </div>
+         </div>
+        </div>
+  </div>
+</div>
+
+  </div>
+  <div class="row text-center">
+    <div class="col-1 border">9587316</div>
+    <div class="col-3   border">Ficus</div>
+    <div class="col-3  border">120 plantas</div>
+    <div class="col-2   border">$40.00</div>
+    <div class="col-3 d-flex justify-content-center border"  >
+      <button type="button" class="btn btn-secondary m-1" onclick="swal({
+        title: '¿Estás seguro?',
+        text: 'Eliminado, se perderán todos los datos del producto',
+        icon: 'warning',
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal('El producto se ha eliminado exitosamente', {
+            icon: 'success',
+          });
+        }
+      });">Eliminar</button>                           
+      <button type="button" class="btn btn-secondary m-1" data-bs-toggle="modal" data-bs-target="#ficus" data-bs-whatever="@mdo">Ver</button>                       
+        <div class="modal fade" id="ficus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog ">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel3">Ver Planta</h5>
+                
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Ingresa el codigo:</label>
+                    <input type="text" class="form-control" id="recipient-name9" placeholder="9587316">
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Nombre Común:</label>
+                    <input type="text" class="form-control" id="recipient-name10" placeholder="Ficus">
+                  </div>
+                  <div class="d-flex ">
+                    <div class="mb-3 m-3">
+                      <label for="recipient-name" class="col-form-label">Nombre Cientifico:</label>
+                      <input type="text" class="form-control" id="recipient-name11" placeholder="Ficus">
+                    </div>
+                      <div class="mb-3 m-3">
+                      <label for="recipient-name" class="col-form-label">Familia:</label>
+                      <input type="text" class="form-control" id="recipient-name12" placeholder="Moraceae">
+                    </div>
+                  </div>
+                  <div class="d-flex">
+                    <div class="mb-3 m-3">
+                      <label for="recipient-name" class="col-form-label">Existencias:</label>
+                      <input type="text" class="form-control" id="recipient-name008" placeholder="120 plantas"> 
+                    </div>
+                    <div class="mb-3 m-3">
+                      <label for="recipient-name" class="col-form-label">Precio:</label>
+                      <input type="text" class="form-control" id="recipient-name009" placeholder="$40.00">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Plantacion:</label>
+                    <textarea class="form-control" id="message-text31" placeholder="Tendrás que cortar un brote con tres pares de hojas en primavera. Corta el tallo por debajo de una hoja y retírales el par inferior de hojas. Unta los extremos en hormonas de enraizamiento y haz un orificio con una varilla en el sustrato con arena y turba húmeda."></textarea>                                      
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Cuidados:</label>
+                    <textarea class="form-control" id="message-text41" placeholder="Deben cultivarse en zonas soleadas, pero en modo semisombra.La mayoría de los ficus necesitan luz en semisombra para mantenerse saludable."></textarea>                                         
+                  </div>  
+                  <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Descripcion:</label>
+                    <textarea class="form-control" id="message-text51" placeholder="Una de las características de las especies de este género es la secreción lechosa llamada látex que segregan al cortar o herir cualquier parte de la planta. El tipo muy particular de inflorescencia que se parece más a un fruto que a unas flores habituales. El género reside en que las yemas terminales de las hojas están encerradas dentro de un par de estípulas soldadas en un principio y luego caducas."></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <img class="w-80 mb-4 rounded" id="foto-planta11" src="jardin/ficuss1.png" alt="">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cambiar Imagen</button>
+                  </div>
+                </form>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-secondary m-1" data-bs-toggle="modal" data-bs-target="#editarficus" data-bs-whatever="@mdo">Editar</button>
+            </div>
+         </div>
+        </div>
+    </div>
+    </div>
+    </div>
+  
+  </div>
+  <div class="modal fade" id="editarpoto" tabindex="-1" aria-labelledby="editarpoto1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editarpoto1">Editar Planta</h5>
+          
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Ingresa el codigo:</label>
+              <textarea type="text" class="form-control" id="recipient-name8">1902344</textarea>
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Nombre Común:</label>
+              <textarea type="text" class="form-control" id="recipient-name001">Poto</textarea>
+            </div>
+            <div class="d-flex ">
+              <div class="mb-3 m-3">
+                <label for="recipient-name" class="col-form-label">Nombre Cientifico:</label>
+                <textarea type="text" class="form-control" id="recipient-name00">Epipremnum Pinnatum</textarea>
+              </div>
+                <div class="mb-3 m-3">
+                <label for="recipient-name" class="col-form-label">Familia:</label>
+                <textarea type="text" class="form-control" id="recipient-name002">Aráceas (Araceae)</textarea>
+              </div>
+              
+            </div>
+            <div class="d-flex">
+              <div class="mb-3 m-3">
+                <label for="recipient-name" class="col-form-label">Existencias:</label>
+                <textarea type="text" class="form-control" id="recipient-name003">200 plantas</textarea>
+              </div>
+              <div class="mb-3 m-3">
+                <label for="recipient-name" class="col-form-label">Precio:</label>
+                <textarea type="text" class="form-control" id="recipient-name004">$35.00</textarea>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Plantacion:</label>
+              <textarea class="form-control" id="message-text003">Deja que la tierra se seque entre riegos. Para lograr que las hojas alcancen su tamaño definitivo requieren condiciones de humedad ambiental muy altas, lo cual es difícil de lograr en un hogar, pero no imposible si pulverizamos sus hojas con frecuencia y con agua tibia.</textarea>                                      
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Cuidados:</label>
+              <textarea class="form-control" id="message-text004">Dejar secar capa superficial entre riegos, ubucacion interior, a una temperatura de 16-21 ºC (Mín. 3-6 ºC), Los riegos han de ser moderados ya que un exceso de riego provoca el amarillamiento de las hojas y su posterior caída.</textarea>                                         
+            </div>  
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Descripcion:</label>
+              <textarea class="form-control" id="message-text005">El potos es una planta trepadora del bosque tropical con hojas verdes teñidas con dibujos de color crema.
+                Estas hojas, cuando la planta está reptando por el bosque en busca de una guía o soporte para trepar, son 
+                de tamaño pequeño, pero cuando lo consiguen y comienzan a trepar, las hojas aumentan de tamaño.</textarea>
+            </div>
+            <div class="mb-3">
+              <img class="w-80 mb-4 rounded" id="foto-plantapoto" src="jardin/pot.jpg" alt="">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cambiar Imagen</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="swal('Los datos han sido actualizados', {
+            icon: 'success',
+          });">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="editarjade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editarjade1">Editar Planta</h5>
+          
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Ingresa el codigo:</label>
+              <textarea type="text" class="form-control" id="recipient-name0004">8234759</textarea>
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Nombre Común:</label>
+              <textarea type="text" class="form-control" id="recipient-name0005">Árbol de Jade</textarea>
+            </div>
+            <div class="d-flex ">
+              <div class="mb-3 m-3">
+                <label for="recipient-name" class="col-form-label">Nombre Cientifico:</label>
+                <textarea type="text" class="form-control" id="recipient-name0006">Crassula ovata</textarea>
+              </div>
+                <div class="mb-3 m-3">
+                <label for="recipient-name" class="col-form-label">Familia:</label>
+                <textarea type="text" class="form-control" id="recipient-name0007">Crassulaceae</textarea>
+              </div>
+            </div>
+            <div class="d-flex">
+              <div class="mb-3 m-3">
+                <label for="recipient-name" class="col-form-label">Existencias:</label>
+                <textarea type="text" class="form-control" id="recipient-name00006">150 plantas</textarea>
+              </div>
+              <div class="mb-3 m-3">
+                <label for="recipient-name" class="col-form-label">Precio:</label>
+                <textarea type="text" class="form-control" id="recipient-name00007">$55.00</textarea>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Plantacion:</label>
+              <textarea class="form-control" id="message-text03">Para el árbol de jade es mejor que se planta en una mezcla que contenga tierra de jardín, perlita y arena. La tierra que uses debe drenar bien el agua de riego, ya que esta especie no tolera los encharcamientos. El riego en exceso puede ocasionar la caída de las hojas y la putrefacción de la planta.</textarea>                                      
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Cuidados:</label>
+              <textarea class="form-control" id="message-text04">Para estimularla se debe dejar de regar por completo en otoño. La combinación de días más cortos, noches frías y falta de agua durante varias semanas producirán la floración alrededor del comienzo del invierno.</textarea>                                         
+            </div>  
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Descripcion:</label>
+              <textarea class="form-control" id="message-text05">El arbol de jade es una planta con ramas gruesas y hojas carnosas de 3 a 7 cm, que crecen en pares opuestos a lo largo del tallo. Tiene un crecimiento arbustivo, suele desarrollar un tronco central grueso.Las hojas son de un característico color verde jade y algunas variedades pueden desarrollar.</textarea>
+            </div>
+            <div class="mb-3">
+              <img class="w-80 mb-4 rounded" id="foto-planta01" src="jardin/ficuss1.png" alt="">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cambiar Imagen</button>
+            </div>
+          </form>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="swal('Los datos han sido actualizados', {
+          icon: 'success',
+        });">Guardar Cambios</button>
+      </div>
+   </div>
+  </div>
+  </div>
+  <div class="modal fade" id="editarficus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editarficus1">Editar Planta</h5>
+          
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Ingresa el codigo:</label>
+              <textarea type="text" class="form-control" id="recipient-name00004">9587316</textarea>
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Nombre Común:</label>
+              <textarea type="text" class="form-control" id="recipient-name00005">Ficus</textarea>
+            </div>
+            <div class="d-flex ">
+              <div class="mb-3 m-3">
+                <label for="recipient-name" class="col-form-label">Nombre Cientifico:</label>
+                <textarea type="text" class="form-control" id="recipient-name000006">Ficus</textarea>
+              </div>
+                <div class="mb-3 m-3">
+                <label for="recipient-name" class="col-form-label">Familia:</label>
+                <textarea type="text" class="form-control" id="recipient-name000007">Moraceae</textarea>
+              </div>
+            </div>
+            <div class="d-flex">
+              <div class="mb-3 m-3">
+                <label for="recipient-name" class="col-form-label">Existencias:</label>
+                <textarea type="text" class="form-control" id="recipient-name0000006">120 plantas</textarea>
+              </div>
+              <div class="mb-3 m-3">
+                <label for="recipient-name" class="col-form-label">Precio:</label>
+                <textarea type="text" class="form-control" id="recipient-name0000007">$40.00</textarea>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Plantacion:</label>
+              <textarea class="form-control" id="message-text0003">Tendrás que cortar un brote con tres pares de hojas en primavera. Corta el tallo por debajo de una hoja y retírales el par inferior de hojas. Unta los extremos en hormonas de enraizamiento y haz un orificio con una varilla en el sustrato con arena y turba húmeda.</textarea>                                      
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Cuidados:</label>
+              <textarea class="form-control" id="message-text0004">Deben cultivarse en zonas soleadas, pero en modo semisombra.La mayoría de los ficus necesitan luz en semisombra para mantenerse saludable.</textarea>                                         
+            </div>  
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Descripcion:</label>
+              <textarea class="form-control" id="message-text0005">Una de las características de las especies de este género es la secreción lechosa llamada látex que segregan al cortar o herir cualquier parte de la planta. El tipo muy particular de inflorescencia que se parece más a un fruto que a unas flores habituales. El género reside en que las yemas terminales de las hojas están encerradas dentro de un par de estípulas soldadas en un principio y luego caducas.</textarea>
+            </div>
+            <div class="mb-3">
+              <img class="w-80 mb-4 rounded" id="foto-planta0001" src="jardin/ficuss1.png" alt="">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cambiar Imagen</button>
+            </div>
+          </form>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="swal('Los datos han sido actualizados', {
+          icon: 'success',
+        });">Guardar Cambios</button>
+      </div>
+   </div>
+  </div>
+  </div>
+</body>
+</html>

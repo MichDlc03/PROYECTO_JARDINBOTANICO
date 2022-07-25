@@ -1,0 +1,141 @@
+*{margin: 0; box-sizing: border-box;}
+
+body{
+    font-family: 'Catamaran', sans-serif;
+  background-color: white;
+  
+}
+
+.contenedor_principal{
+    position: fixed;
+    background-color:#558b2f;
+    height: 80px;
+    width: 100%;;
+    top: 0;
+    left: 0;
+
+}
+
+.nav1{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.nav-link1{
+    text-decoration: none;
+    color: white;
+    margin-top: 5px;
+}
+
+.logo{
+    text-shadow: 2px 2px 5px #F1E1A6;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    padding:  0 10px;
+    line-height: 50px;
+
+}
+.nav-menu1{
+    display: flex;
+    margin-right: 20px;
+    list-style: none;
+}
+.nav-menu20{
+    font-family: 'Catamaran', sans-serif;
+    font-size: 18px;
+    margin:   0 10px;
+    line-height: 80px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.nav-menu20:hover{
+    color: #eeee;
+    padding: 10px 20px;
+    border-bottom: 3px solid #ffffff;
+    background-color: #eeee;
+    transition: 0.5S;
+}
+
+
+.contenido-search{
+
+    width: 1500px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+.menu{
+    
+    font-family: 'Catamaran', sans-serif;
+    font-size: 18px;
+    
+}
+.menu1{
+    color: white;
+    text-decoration:wavy;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 25px;
+    
+}
+
+div#carru{
+    margin-left: 10px;
+    border-color: #558b2f;
+    margin-top: 80px;
+    width: 700px;    
+}
+.caja_tabla{
+    font-size: 14px;
+    height: 200px;
+    margin-left: 5px;
+    margin-bottom: 40px;
+    width: 900px;
+    
+}
+
+.w{
+    width: 700px;
+}
+
+
+.poto{
+    font-family: 'IBM Plex Serif', serif;
+    color:#8bc34a;
+    text-decoration-line: overline;
+    text-decoration-color:#ccc;
+}
+.M{
+    
+    color: gray;
+    text-align: center;
+    text-transform: capitalize;
+}
+.boton-compra
+{
+    padding: 2%;
+    margin-left: 90%;
+}
+#exampleModal{
+    padding: 5%;
+}
+.modal-dialog{
+    width: 25px;
+    height: 15px;
+}
+.credit-card-div{
+    margin: 5%;
+}
+#cancelar-dir{
+    margin-left: 57.5%;
+}
+#pagar-pago{
+    margin-left: 70%;
+}
+.credit-card-div  span { padding-top:10px; }
+.credit-card-div img { padding-top:30px; }
+.credit-card-div .small-font { font-size:9px; }
+.credit-card-div .pad-adjust { padding-top:10px; }
+
+

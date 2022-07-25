@@ -1,0 +1,241 @@
+
+body{
+    font-family: 'Catamaran', sans-serif;
+     background-color:#689f38;
+  
+}
+
+
+
+.nav-link1{
+    text-decoration: none;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.logo{
+    text-shadow: 2px 2px 5px #fff;
+    font-size: 30px;
+    font-weight: bold;
+    padding:  0 10px;
+
+}
+
+.menu{
+    
+    font-family: 'Catamaran', sans-serif;
+    font-size: 18px;
+    
+}
+.menu1{
+    color: white;
+    text-decoration:wavy;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 25px;
+    
+}
+main{
+
+    width: 1519px;
+    height: 500px;
+    display: flex;
+}
+section{
+    width: 1519px;
+    height: 500px;
+    background-color: #eeeeee;
+}
+
+div#contenedor-peque{
+    width: 1519px;
+    margin-top: 100px;
+    height: 330px;
+    background-color: #ffffff;
+}
+.texto-one{
+
+    margin-top: 80px;
+    width: 900px;
+    height: 500px;
+    background-color:#eeeeee;
+
+}
+
+h2#ubi{
+    height: 100px;
+    margin-top: 300px;
+    background-color:#fff;
+    text-align: center;
+    text-decoration: overline ;
+}
+h2#ubic{
+    font-family: 'IBM Plex Serif', serif;
+    margin-top: 20px;
+    font-size: 30px;
+    text-decoration: overline ;
+    text-align: center;
+
+}
+
+
+.texto{
+    font-family: 'Catamaran', sans-serif;
+    margin-top: 10px;
+    margin: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+}
+p{
+    margin:20px;
+    font-size: 18px;
+}
+
+
+.img{
+
+    margin-top: 80px;
+    width: 800px;
+    height:500px;
+    display: flex;
+}
+
+.carrucel{
+    width:750px;
+    height: 500px;
+    animation-name: fotos;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+@keyframes fotos {
+    from {
+        background-image: url(../jardin/photo.png);
+    }
+    to{
+        background-image: url(../jardin/photo3.jpg);
+    }
+  
+}
+.carrucel2{
+    width:750px;
+    height: 500px;
+    animation-name: fotos2;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+@keyframes fotos2 {
+    from {
+        background-image: url(../jardin/photo4.png);
+    }
+    to{
+        background-image: url(../jardin/photo2.png);
+    }
+  
+}
+article{
+    margin-top:100px;
+    width: 1519px;
+    height: 400px;
+    display: flex;
+
+}
+
+.contenido_dos{
+
+    background-color:#eeeeee;
+    width: 1518px;
+    height: 500px;
+}
+
+
+.img{
+    width: 820px;
+    height: 500px;
+    background-color: #558b2f;
+}
+
+.Mision{
+    
+    
+    width: 1519px;
+    height: 300px;
+    background-color: #eeeeee;
+
+}
+.h1{
+    font-size: 12px;
+    font-family: 'IBM Plex Serif', serif;
+    margin-top: 150px;
+    text-decoration: overline ;
+}
+.h11{
+    font-family: 'IBM Plex Serif', serif;
+    margin-top: 45px;
+    text-decoration: overline ;
+}
+
+h1#h2{
+    font-family: 'IBM Plex Serif', serif;
+    margin-top: 100px;
+    text-decoration: overline ;
+}
+
+footer
+{
+    
+    font-family: 'Catamaran', sans-serif;
+
+    justify-content: center;
+    align-items: center;
+    background-color:#689f38;
+
+    height: 300px;
+    display:flex;
+
+}
+
+.contactos{
+    border-right:#ffffff;
+    margin: 20px;
+    width: 500px;
+    height:230px;
+    
+}
+
+.hg{
+    margin-left: 10px;
+}
+
+
+.icono{
+    margin-top: 5px;
+    align-items: center;
+    margin-left: 30px;
+    display: flex;
+}
+
+.fb{
+
+    margin-left: 8px;
+    text-decoration: none;
+    color: white;
+    
+}
+
+.fb:hover{
+    color:#ccc;
+    transition: 0.5s;;
+}
+.alto{
+    line-height: 35px;
+}
+
+.as{
+    
+    color: rgb(255, 255, 255);
+    line-height: 20px;
+    align-items: center;
+
+}
+
